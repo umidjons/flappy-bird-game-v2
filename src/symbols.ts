@@ -7,4 +7,9 @@ export const Symbols = {
     Context: Symbol.for('Context'),
     JumpHeight: Symbol.for('JumpHeight'),
     Bonus: Symbol.for('Bonus'),
+    NorthPipeImage: Symbol.for('NorthPipeImage'),
+    SouthPipeImage: Symbol.for('SouthPipeImage'),
+    BackgroundImage: Symbol.for('BackgroundImage'),
+    GroundImage: Symbol.for('GroundImage'),
+    BirdImage: Symbol.for('BirdImage'),
 };

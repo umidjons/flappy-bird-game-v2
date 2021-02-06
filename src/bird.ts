@@ -14,12 +14,12 @@ export class Bird {
     private readonly imagePath: string;
     private readonly image: HTMLImageElement;
 
-    constructor(imagePath: string) {
+    constructor() {
         this.canvas = container.get(Symbols.Canvas);
         this.context = container.get(Symbols.Context);
         this.gravity = container.get(Symbols.Gravity);
         this.jumpHeight = container.get(Symbols.JumpHeight);
-        this.imagePath = imagePath;
+        this.imagePath = container.get(Symbols.BirdImage);
         this.image = new Image();
         this.image.src = this.imagePath;
         this.x = 100;

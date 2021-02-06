@@ -11,10 +11,10 @@ export class Ground {
     private readonly imagePath: string;
     private readonly image: HTMLImageElement;
 
-    constructor(imagePath: string) {
+    constructor() {
         this.canvas = container.get(Symbols.Canvas);
         this.context = container.get(Symbols.Context);
-        this.imagePath = imagePath;
+        this.imagePath = container.get(Symbols.GroundImage);
         this.image = new Image();
         this.image.src = this.imagePath;
     }

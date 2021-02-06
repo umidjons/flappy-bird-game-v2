@@ -26,11 +26,16 @@ container.bind(Symbols.Context).toConstantValue(context);
 container.bind(Symbols.NewPipeGenerationPoint).toConstantValue(NEXT_PIPE_GENERATION_POINT);
 container.bind(Symbols.JumpHeight).toConstantValue(JUMP_HEIGHT);
 container.bind(Symbols.Bonus).toConstantValue(BONUS);
+container.bind(Symbols.NorthPipeImage).toConstantValue('images/pipeNorth.png');
+container.bind(Symbols.SouthPipeImage).toConstantValue('images/pipeSouth.png');
+container.bind(Symbols.BackgroundImage).toConstantValue('images/bg.png');
+container.bind(Symbols.GroundImage).toConstantValue('images/fg.png');
+container.bind(Symbols.BirdImage).toConstantValue('images/bird.png');
 
-const pipeManager = new PipeManager('images/pipeNorth.png', 'images/pipeSouth.png');
-const background = new Background('images/bg.png');
-const ground = new Ground('images/fg.png');
-const bird = new Bird('images/bird.png');
+const pipeManager = new PipeManager();
+const background = new Background();
+const ground = new Ground();
+const bird = new Bird();
 const score = new Score('sounds/score.mp3');
 
 let gameOver = false;

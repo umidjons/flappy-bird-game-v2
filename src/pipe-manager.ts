@@ -17,11 +17,11 @@ export class PipeManager {
     private readonly speed: number;
     private readonly newPipeGenerationPoint: number;
 
-    constructor(northPipeImage: string, southPipeImage: string) {
+    constructor() {
         this.canvas = container.get(Symbols.Canvas);
         this.context = container.get(Symbols.Context);
-        this.northPipe = new Pipe(northPipeImage);
-        this.southPipe = new Pipe(southPipeImage);
+        this.northPipe = new Pipe(container.get(Symbols.NorthPipeImage));
+        this.southPipe = new Pipe(container.get(Symbols.SouthPipeImage));
         this.gap = container.get(Symbols.Gap);
         this.pipes = [
             this.getCoordinatesForNewPipe(),

@@ -9,9 +9,9 @@ export class Background {
     private readonly imagePath: string;
     private readonly image: HTMLImageElement;
 
-    constructor(imagePath: string) {
+    constructor() {
         this.context = container.get(Symbols.Context);
-        this.imagePath = imagePath;
+        this.imagePath = container.get(Symbols.BackgroundImage);
         this.image = new Image();
         this.image.src = this.imagePath;
     }
