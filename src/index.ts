@@ -31,12 +31,15 @@ container.bind(Symbols.SouthPipeImage).toConstantValue('images/pipeSouth.png');
 container.bind(Symbols.BackgroundImage).toConstantValue('images/bg.png');
 container.bind(Symbols.GroundImage).toConstantValue('images/fg.png');
 container.bind(Symbols.BirdImage).toConstantValue('images/bird.png');
+container.bind(Symbols.ScoreSound).toConstantValue('sounds/score.mp3');
+container.bind(Symbols.HitSound).toConstantValue('sounds/hit.mp3');
+container.bind(Symbols.FlySound).toConstantValue('sounds/fly.mp3');
 
 const pipeManager = new PipeManager();
 const background = new Background();
 const ground = new Ground();
 const bird = new Bird();
-const score = new Score('sounds/score.mp3');
+const score = new Score();
 
 let gameOver = false;
 
@@ -57,6 +60,7 @@ function game() {
 
         if (pipeManager.doesHitPipe(bird, coords) || ground.doesHit(bird)) {
             gameOver = true;
+            pipeManager.makeHitSound();
         }
 
         if (pipeManager.doesPassPipe(bird, coords)) {

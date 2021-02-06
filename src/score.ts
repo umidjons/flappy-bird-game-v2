@@ -11,14 +11,14 @@ export class Score {
     private readonly y: number;
     private sound: HTMLAudioElement;
 
-    constructor(soundPath: string) {
+    constructor() {
         this.value = 0;
         this.canvas = container.get(Symbols.Canvas);
         this.context = container.get(Symbols.Context);
         this.bonusPoints = container.get(Symbols.Bonus);
         this.x = 10;
         this.y = this.canvas.height - 20;
-        this.sound = new Audio(soundPath);
+        this.sound = new Audio(container.get(Symbols.ScoreSound));
     }
 
     public increment() {

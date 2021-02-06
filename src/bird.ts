@@ -13,6 +13,7 @@ export class Bird {
     private readonly jumpHeight: number;
     private readonly imagePath: string;
     private readonly image: HTMLImageElement;
+    private flySound: HTMLAudioElement;
 
     constructor() {
         this.canvas = container.get(Symbols.Canvas);
@@ -24,6 +25,7 @@ export class Bird {
         this.image.src = this.imagePath;
         this.x = 100;
         this.y = 70;
+        this.flySound = new Audio(container.get(Symbols.FlySound));
     }
 
     draw(): void {
@@ -36,6 +38,7 @@ export class Bird {
 
     jump(): void {
         this.y = this.y - this.jumpHeight;
+        this.makeFlySound();
     }
 
     rightSide(): number {
@@ -52,6 +55,11 @@ export class Bird {
 
     bottomSide(): number {
         return this.y + this.image.height;
+    }
+
+    makeFlySound() {
+        this.flySound.playbackRate = 6;
+        this.flySound.play();
     }
 
 }

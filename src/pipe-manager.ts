@@ -16,6 +16,7 @@ export class PipeManager {
     private readonly gap: number;
     private readonly speed: number;
     private readonly newPipeGenerationPoint: number;
+    private readonly hitSound: HTMLAudioElement;
 
     constructor() {
         this.canvas = container.get(Symbols.Canvas);
@@ -28,6 +29,7 @@ export class PipeManager {
         ];
         this.speed = container.get(Symbols.MoveSpeed);
         this.newPipeGenerationPoint = container.get(Symbols.NewPipeGenerationPoint);
+        this.hitSound = new Audio(container.get(Symbols.HitSound));
     }
 
     public drawNorthPipe(coords: Coordinates) {
@@ -60,6 +62,10 @@ export class PipeManager {
     public doesPassPipe(bird: Bird, coords: Coordinates): boolean {
         return bird.rightSide() > coords.x + this.getPipeWidth()
             && bird.rightSide() <= coords.x + this.getPipeWidth() + this.speed;
+    }
+
+    public makeHitSound() {
+        this.hitSound.play();
     }
 
     public doesHitPipe(bird: Bird, coords: Coordinates) {
