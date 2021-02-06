@@ -31,7 +31,7 @@ const pipeManager = new PipeManager('images/pipeNorth.png', 'images/pipeSouth.pn
 const background = new Background('images/bg.png');
 const ground = new Ground('images/fg.png');
 const bird = new Bird('images/bird.png');
-const score = new Score();
+const score = new Score('sounds/score.mp3');
 
 let gameOver = false;
 
