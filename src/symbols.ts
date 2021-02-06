@@ -6,4 +6,5 @@ export const Symbols = {
     Canvas: Symbol.for('Canvas'),
     Context: Symbol.for('Context'),
     JumpHeight: Symbol.for('JumpHeight'),
+    Bonus: Symbol.for('Bonus'),
 };

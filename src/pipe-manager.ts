@@ -57,6 +57,11 @@ export class PipeManager {
         }
     }
 
+    public doesPassPipe(bird: Bird, coords: Coordinates): boolean {
+        return bird.rightSide() > coords.x + this.getPipeWidth()
+            && bird.rightSide() <= coords.x + this.getPipeWidth() + this.speed;
+    }
+
     public doesHitPipe(bird: Bird, coords: Coordinates) {
         return this.isInsidePipeByX(bird, coords)
             && this.isInsidePipeByY(bird, coords);
